@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="color-scheme" content="dark"/>
+<title>原力健康｜PDS4 Three-Surface Product Prototype</title>
+<link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+<div class="grain"></div><div class="handoffFlash" id="flash"></div><div class="live" aria-live="polite" id="live"></div><div class="toast" id="toast"></div>
+<div class="app">
+<aside class="rail">
+ <div class="brand">原力健康<small>THREE-SURFACE PRODUCT PROTOTYPE</small></div>
+ <div class="sectionLabel">SURFACE</div>
+ <div class="surfaceSwitch">
+  <button class="on" data-mode="phone" onclick="setMode('phone',this)">iPhone · Navigate <span>10</span></button>
+  <button data-mode="watch" onclick="setMode('watch',this)">Watch · Embody <span>6</span></button>
+  <button data-mode="pc" onclick="setMode('pc',this)">PC · Deliberate <span>8</span></button>
+  <button data-mode="flows" onclick="setMode('flows',this)">Gold Flows <span>4</span></button>
+ </div>
+ <div class="sectionLabel">GOLD FLOWS</div>
+ <div class="flowList">
+  <button class="flowBtn" onclick="runFlow('GF-01')">GF-01 · Today → Watch</button>
+  <button class="flowBtn" onclick="runFlow('GF-02')">GF-02 · Evidence → PC</button>
+  <button class="flowBtn" onclick="runFlow('GF-03')">GF-03 · Guardrail</button>
+  <button class="flowBtn" onclick="runFlow('GF-04')">GF-04 · Learning → Reuse</button>
+ </div>
+ <div class="railFooter">SYNTHETIC ONLY<br>NO REAL HEALTH DATA<br>NO DIAGNOSIS · NO RUNTIME MUTATION</div>
+</aside>
+<main class="workspace">
+ <header class="topbar"><div class="crumb">One Health Kernel / <strong id="crumb">iPhone · Navigate</strong></div><div class="controls"><button class="chip on" id="productMode">Product Mode</button><button class="chip" onclick="runFlow('GF-01')">Play Core Flow</button></div></header>
+ <div class="stage">
+  <section class="mode on" id="mode-phone" data-surface="phone">
+   <div class="heroRow"><div><div class="context">NAVIGATE · HOUR / DAY</div><h1>iPhone</h1><p>保护注意力。只在需要选择、确认或交接时出现。</p></div></div>
+   <div class="phoneArea"><div class="phoneShell"><div class="phoneScreen" id="phoneScreen"></div></div><div class="phoneMenu" id="phoneMenu"></div></div>
+  </section>
+  <section class="mode" id="mode-watch" data-surface="watch"><div class="heroRow"><div><div class="context">EMBODY · SECONDS / MINUTES</div><h1>Watch</h1><p>身体边缘。Now / Act / Capture / Guardrail / Status。</p></div></div><div class="flowGrid" id="watchMenu"></div></section>
+  <section class="mode" id="mode-pc" data-surface="pc"><div class="heroRow"><div><div class="context">DELIBERATE · WEEK / MONTH / YEAR</div><h1>Health Intelligence Studio</h1><p>低频、高深度。Verdict first，Evidence later。</p></div></div><div class="pcLayout"><nav class="pcNav"><div class="pcBrand">原力健康 · PC</div><div id="pcNav"></div></nav><div class="pcCanvas" id="pcCanvas"></div></div></section>
+  <section class="mode" id="mode-flows"><div class="heroRow"><div><div class="context">ONE KERNEL · FOUR GOLD FLOWS</div><h1>产品不是 24 个页面。</h1><p>它是同一组健康对象，在三种认知距离中完成理解、决定、行动与复用。</p></div></div><div class="flowGrid" id="flowGrid"></div><div class="kernel"><div><strong>PC · Deliberate</strong><small>理解 / 证据 / 因果 / 临床协作</small></div><div class="arrow">↔</div><div><strong>ONE HEALTH KERNEL</strong><small>EVD → DEC → ACT → OUT → LRN</small></div><div class="arrow">↔</div><div><strong>iPhone + Watch</strong><small>导航注意力 / 承接行动</small></div></div></section>
+ </div>
+</main>
+</div>
+<div class="watchDock" id="watchDock"><div><div class="watchNow" id="watchNow">NOW</div><div class="watchBig" id="watchBig">WALK</div><div class="watchSub" id="watchSub">20 min</div><button class="watchAction" id="watchAction" onclick="watchPrimary()">START</button></div></div>
+<script src="app.js"></script>
+</body></html>
